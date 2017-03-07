@@ -1,0 +1,46 @@
+{
+  "name": "typescript-nodejs-bootstrap",
+  "version": "0.1.0",
+  "description": "",
+  "repository": "",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc --pretty",
+    "test": "npm run build && mocha --compilers ts:ts-node/register --recursive test/**/*-spec.ts",
+    "watch": "npm run build -- --watch",
+    "watch:test": "npm run test -- --watch"
+  },
+  "author": {
+    "name": "Eric Lara",
+    "email": "ericzon@gmail.com"
+  },
+  "main": "dist/bin/app",
+  "typings": "dist/bin/app.d.ts",
+  "bin": {
+    "app": "bin/app"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/chai": "^3.4.35",
+    "@types/commander": "^2.3.31",
+    "@types/mocha": "^2.2.39",
+    "@types/node": "^7.0.5",
+    "@types/sinon": "^1.16.35",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "rimraf": "^2.6.1",
+    "sinon": "^1.17.7",
+    "ts-node": "^2.1.0",
+    "typescript": "^2.2.1"
+  },
+  "dependencies": {
+    "@types/express": "^4.0.35",
+    "commander": "^2.9.0",
+    "express": "^4.15.0",
+    "http": "0.0.0"
+  }
+}
