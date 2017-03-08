@@ -12,9 +12,10 @@ export class RoutesProvider {
         fs.readdirSync(__dirname).forEach((file) => {
             if (/(\.d\.ts$|index\.js$)/.test(file)) return;
             var name = file.substr(0, file.indexOf('.'));
-            console.log("requiring file name: ",name);
+            console.log("Loading: ",name);
             let dynFilePath = './'+name
             let aRoute = require(dynFilePath);
+            aRoute.default(app);
         });
     }
 }

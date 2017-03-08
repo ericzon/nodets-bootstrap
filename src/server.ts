@@ -12,7 +12,7 @@ const app: express.Application = express();
 console.log("Loading config: ",cfg);
 RoutesProvider.initRoutes(app);
 
-let server = http.createServer(app).listen(port);
+const server = http.createServer(app).listen(port);
 
 server.on("listening", function onListening() {
 	var addr = server.address();
