@@ -1,10 +1,11 @@
 {
   "name": "typescript-nodejs-bootstrap",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "repository": "",
   "license": "MIT",
   "scripts": {
+    "start": "node dist/server.js",
     "clean": "rimraf dist",
     "build": "npm run clean && tsc --pretty",
     "test": "npm run build && mocha --compilers ts:ts-node/register --recursive test/**/*-spec.ts",
@@ -15,10 +16,10 @@
     "name": "Eric Lara",
     "email": "ericzon@gmail.com"
   },
-  "main": "dist/bin/app",
-  "typings": "dist/bin/app.d.ts",
+  "main": "dist/bin/server",
+  "typings": "dist/bin/server.d.ts",
   "bin": {
-    "app": "bin/app"
+    "app": "bin/server"
   },
   "files": [
     "bin",
