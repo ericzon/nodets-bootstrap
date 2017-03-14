@@ -1,3 +1,5 @@
+"use strict";
+
 import { ToolsController } from '../src/controllers/tools.server.controller';
 import * as chai from 'chai';
 import * as sinon from 'sinon';
