@@ -47,5 +47,3 @@ server.on("error", function onError(error: any) {
   }
 });
 
-exports.logger = logger;
-
