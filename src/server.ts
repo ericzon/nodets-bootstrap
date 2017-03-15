@@ -5,12 +5,12 @@ import * as express from "express";
 import { RoutesProvider } from './routes';
 import { ToolsController } from './controllers/tools.server.controller';
 import logger from './libs/logger';
+import config from './config/config';
 
-const cfg = require('./config/config');
-const port = ToolsController.normalizePort( process.env.PORT || cfg.port );
+const port = ToolsController.normalizePort( process.env.PORT || config.port );
 const app: express.Application = express();
 
-logger.info("Loading config: ",cfg);
+logger.info("Loading config: ",config);
 RoutesProvider.initRoutes(app);
 
 const server = http.createServer(app).listen(port);
