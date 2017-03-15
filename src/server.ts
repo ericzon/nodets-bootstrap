@@ -6,9 +6,11 @@ import { RoutesProvider } from './routes';
 import { ToolsController } from './controllers/tools.server.controller';
 import logger from './libs/logger';
 import config from './config/config';
+import * as cors from 'cors';
 
 const port = ToolsController.normalizePort( process.env.PORT || config.port );
 const app: express.Application = express();
+app.use(cors());
 
 logger.info("Loading config: ",config);
 RoutesProvider.initRoutes(app);
