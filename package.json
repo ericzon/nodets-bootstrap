@@ -1,7 +1,7 @@
 {
   "name": "typescript-nodejs-bootstrap",
   "version": "0.2.0",
-  "description": "Just a simple codebase to start a NodeJs API using Typescript & ECMAScript 6. Project adapted from yeoman generator https://www.npmjs.com/package/generator-nodejs-cli-typescript",
+  "description": "Just a simple codebase to start a NodeJs API using Typescript & ES6. Project adapted from yeoman generator https://www.npmjs.com/package/generator-nodejs-cli-typescript",
   "repository": "",
   "license": "MIT",
   "scripts": {
