@@ -2,14 +2,17 @@
 
 import * as http from 'http';
 import * as express from "express";
+import * as cors from 'cors';
+import * as bodyParser from 'body-parser';
 import { RoutesProvider } from './routes';
 import { ToolsController } from './controllers/tools.server.controller';
 import logger from './libs/logger';
 import config from './config/config';
-import * as cors from 'cors';
 
 const port = ToolsController.normalizePort( process.env.PORT || config.port );
 const app: express.Application = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded( { extended: false } ));
 app.use(cors());
 
 logger.info("Loading config: ",config);
