@@ -10,9 +10,11 @@ import logger from './libs/logger';
 import config from './config/config';
 import * as compression from 'compression';
 
+const helmet = require('helmet');
 const favicon = require('serve-favicons');
 const port = ToolsController.normalizePort( process.env.PORT || config.port );
 const app: express.Application = express();
+app.use(helmet());
 app.use(favicon(__dirname + '/../public/favicon.ico'));
 app.use(compression());
 app.use(bodyParser.json());

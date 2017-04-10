@@ -50,6 +50,7 @@
     "compression": "^1.6.2",
     "cors": "^2.8.1",
     "express": "^4.15.0",
+    "helmet": "^3.5.0",
     "http": "0.0.0",
     "morgan": "^1.8.1",
     "rimraf": "^2.6.1",
