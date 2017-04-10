@@ -16,7 +16,7 @@ app.use(favicon(__dirname + '/../public/favicon.ico'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( { extended: false } ));
 app.use(cors());
-app.use(require("morgan")("dev"));
+app.use(require("morgan")(':method :url :status - HTTP/:http-version - :remote-addr - :res[content-length] - [:date[clf]] - :response-time ms - :user-agent'));
 logger.info("Loading config: ",config);
 RoutesProvider.initRoutes(app);
 
