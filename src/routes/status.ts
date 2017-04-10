@@ -8,7 +8,6 @@ export default (app: any) => {
 	const router = express.Router();
 	router.get('/status', (req: express.Request, res: express.Response) => {
 		let msg = "[" + new Date() + "] API is up! ";
-		logger.verbose(msg);
 		res.json({ msg: msg });
 	});
 	app.use(router);

@@ -14,7 +14,7 @@ const app: express.Application = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( { extended: false } ));
 app.use(cors());
-
+app.use(require("morgan")("combined"));
 logger.info("Loading config: ",config);
 RoutesProvider.initRoutes(app);
 

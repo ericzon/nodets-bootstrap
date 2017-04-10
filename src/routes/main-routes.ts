@@ -8,7 +8,6 @@ export default (app: any) => {
 	const router = express.Router();
 	router.get('/', (req: express.Request, res: express.Response) => {
 		let msg = new Date() + "/ request";
-		logger.verbose("/ ",msg);
 		res.json({ msg: msg });
 	});
 	app.use(router);
