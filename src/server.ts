@@ -9,12 +9,14 @@ import { ToolsController } from './controllers/tools.server.controller';
 import logger from './libs/logger';
 import config from './config/config';
 
+const favicon = require('serve-favicons');
 const port = ToolsController.normalizePort( process.env.PORT || config.port );
 const app: express.Application = express();
+app.use(favicon(__dirname + '/../public/favicon.ico'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( { extended: false } ));
 app.use(cors());
-app.use(require("morgan")("combined"));
+app.use(require("morgan")("dev"));
 logger.info("Loading config: ",config);
 RoutesProvider.initRoutes(app);
 
